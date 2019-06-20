@@ -1,0 +1,120 @@
+{
+    "success": true,
+    "data": {
+        "list": [
+            {
+                "index": 0,
+                "title":"为什么胃癌偏爱中国人？因为超过一半的人感染了它！",
+                "describe": "为什么中国人更容易得胃癌？超过一半中国人感染了HP 根据2016年国际胃癌大会的报告，我国每年新增胃癌病例68万例，占全球发病总数的一半左右。 ...",
+                "level": 2.9,
+                "picUrl": "https://upload-images.jianshu.io/upload_images/9918409-a35de7305d380d1b?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240",
+                "author": "博尔诚",
+                "review_count": 3,
+                "like_count": 13
+            },
+            {
+                "index": 1,
+                "title": "你真的会写mybatis.xml吗？养成好习惯写养眼好用的xml",
+                "describe": "你真的会写mybatis.xml吗？养成好习惯写养眼好用的xml 我们使用mybatis无非就是进行一些增删改查的操作，但是简单的增删改查想要写...",
+                "level": 2.9,
+                "picUrl": "",
+                "author": "博尔诚",
+                "review_count": 3,
+                "like_count": 13
+            },
+            {
+                "index": 2,
+                "title": "我伤透了我的小情人",
+                "describe": "三年前，我曾有过一个小情人。 那时的我，三十多岁，还是人家说的”风流倜傥英俊潇洒”的样子。 短短三年，我感觉自己已经老去许多。 ...",
+                "level": 19.7,
+                "picUrl": "",
+                "author": "我心我心",
+                "review_count": 163,
+                "like_count": 136
+            },
+            {
+                "index": 3,
+                "title": "假如人生不曾相遇……",
+                "describe": "清真重庆鸡公煲 正能量 今天 假如人生不曾相遇， 我还是那个我， 偶尔做做梦， 然后， 开始日复一日的奔波， 淹没在这喧嚣的城市里。 我...",
+                "level": 26.0,
+                "picUrl": "https://upload-images.jianshu.io/upload_images/9442224-df0604774520fd90.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240",
+                "author": "沙姐qingzhen重庆鸡公煲",
+                "review_count": 29,
+                "like_count": 148
+            },
+            {
+                "index": 4,
+                "title": "一个人的人品好不好，就看这五个细节，装是装不像的",
+                "describe": "五个小细节见人品！ 在我们认识的很多人当中，我们对一个人的人品总是把握不是很准确，其实你是没有找到恰当的方法，通常情况下，一个人的人品如何，我们...",
+                "level": 6.5,
+                "picUrl": "https://upload-images.jianshu.io/upload_images/15792802-dfbb438c8f3104d2?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240",
+                "author": "崔先圣",
+                "review_count": 6,
+                "like_count": 54
+            },
+            {
+                "index": 5,
+                "title": "越是聪明的女人，越懂得在这5件事上装“糊涂”",
+                "describe": "对于一个女人来说，最重要的不是美貌，不是身材，而是智慧，女人的美貌和性感的身材，只能吸引男人一时，但吸引不了男人一世。 真正能抓住男人心的，是女...",
+                "level": 7.9,
+                "picUrl": "https://upload-images.jianshu.io/upload_images/16050459-cdd1cd0283a375e6.jpeg?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240",
+                "author": "蓓蓓情",
+                "review_count": 8,
+                "like_count": 56
+            }
+        ],
+        "writer": [
+            {
+                "id": 7778745,
+                "slug": "1a037a3b0ec6",
+                "nickname": "三叶秋",
+                "avatar_source": "http://upload.jianshu.io/users/upload_avatars/7778745/7c512474-3865-4c39-b4f2-d0a830174e62.jpg",
+                "total_likes_count": 5397,
+                "total_wordage": 212797,
+                "is_following_user": false
+            },
+            {
+                "id": 18358423,
+                "slug": "d6eebf6eda4e",
+                "nickname": "心悦费渡",
+                "avatar_source": "http://upload.jianshu.io/users/upload_avatars/18358423/d5dfee44-00c9-4701-bafd-8ca4529a470b.jpg",
+                "total_likes_count": 1,
+                "total_wordage": 283,
+                "is_following_user": false
+            },
+            {
+                "id": 18358373,
+                "slug": "008d2fca5dec",
+                "nickname": "壹_c0db",
+                "avatar_source": "http://upload.jianshu.io/users/upload_avatars/18358373/5ac10187-1270-4ebe-9f5d-1e6579899898",
+                "total_likes_count": 0,
+                "total_wordage": 0,
+                "is_following_user": false
+            },
+            {
+                "id": 18358368,
+                "slug": "ab838b38b3b4",
+                "nickname": "土匪娜",
+                "avatar_source": "http://upload.jianshu.io/users/upload_avatars/18358368/3e82d8f1-0053-480f-9694-d5585f58c081",
+                "total_likes_count": 2,
+                "total_wordage": 1181,
+                "is_following_user": false
+            },
+            {
+                "id": 18357894,
+                "slug": "16b2f85cfd5e",
+                "nickname": "NiyeYee",
+                "avatar_source": "http://upload.jianshu.io/users/upload_avatars/18357894/0a3e1a2a-3fb5-4e71-9efe-0f979f7086a1",
+                "total_likes_count": 0,
+                "total_wordage": 0,
+                "is_following_user": false
+            }
+        ],
+        "recommend":[
+            "https://cdn2.jianshu.io/assets/web/banner-s-club-aa8bdf19f8cf729a759da42e4a96f366.png",
+            "https://cdn2.jianshu.io/assets/web/banner-s-7-1a0222c91694a1f38e610be4bf9669be.png",
+            "https://cdn2.jianshu.io/assets/web/banner-s-5-4ba25cf5041931a0ed2062828b4064cb.png",
+            "https://cdn2.jianshu.io/assets/web/banner-s-6-c4d6335bfd688f2ca1115b42b04c28a7.png"
+        ]
+    }
+}

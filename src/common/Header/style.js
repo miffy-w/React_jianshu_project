@@ -8,7 +8,7 @@ export const Head = styled.header`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-`
+`;
 export const Logo = styled.a.attrs({
     href: '/'
 })`
@@ -22,7 +22,7 @@ export const Logo = styled.a.attrs({
     @media screen and (max-width: 1300px) {
         margin-left: 0px;
     }
-`
+`;
 export const Nav = styled.nav`
     height: 56px;
     box-sizing: border-box;
@@ -54,7 +54,7 @@ export const Nav = styled.nav`
             margin-right: 0px;
         }
     }
-`
+`;
 export const Button = styled.div`
     line-height: 56px;
     cursor: pointer;
@@ -128,7 +128,7 @@ export const Button = styled.div`
                 width: 150px;
             }
         }
-        i{
+        .zoom{
             position: absolute;
             right: 0;
             color: #969696;
@@ -169,7 +169,7 @@ export const Button = styled.div`
     &.hotTag{
         width: 210px;
     }
-`
+`;
 export const Input = styled.input.attrs({
     type: 'text',
     placeholder: '搜索'
@@ -214,7 +214,7 @@ export const Input = styled.input.attrs({
             display: none;
         }
     }
-`
+`;
 
 export const HotSearch = styled.div`
     position: absolute;
@@ -224,7 +224,7 @@ export const HotSearch = styled.div`
     border: 1px solid #ccc;
     border-radius: 4px;
     padding: 0px 20px 10px 20px;
-    /* display: none; */
+    background-color: white;
     color: gray;
     & div.angle{
         position: absolute;
@@ -247,15 +247,24 @@ export const HotSearch = styled.div`
             font-size: 14px;
         }
     }
-`
+`;
 export const ChangeBtn = styled.span`
     &.changeHotTag{
         font-size: 13px;
+        .spin{
+            font-size: 12px;
+            text-align: center;
+            padding: 0;
+            margin-right: 2px;
+            float: left;
+            transition: all 1s;
+            transform-origin: center center;
+        }
     }
     &.changeHotTag:hover{
         color: #000;
     }
-`
+`;
 export const Tag = styled.a.attrs({
     href: '#'
 })`
@@ -276,4 +285,4 @@ export const Tag = styled.a.attrs({
         border: 1px solid #aaa;
         color: #222;
     }
-`
+`;
