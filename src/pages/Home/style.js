@@ -65,6 +65,19 @@ export const Item = styled.div`
     }
 `;
 
+export const LoadMore = styled.div`
+    width: 100%;
+    height: 40px;
+    background: gray;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    cursor: pointer;
+`;
+
 export const Info = styled.p`
     width: 458px;
     height: 20px;
@@ -238,4 +251,21 @@ export const User = styled.div`
         }
         color: #42c02e;
     }
+`;
+
+// 返回顶部：
+export const GoTop = styled.div`
+    height: 60px;
+    width: 40px;
+    border: 2px solid #777;
+    text-align: center;
+    line-height: 30px;
+    font-size: 16px;
+    position: fixed;
+    padding: 6px;
+    bottom: 100px;
+    font-size: bold;
+    right: 150px;
+    /* display: none; */
+    cursor: pointer;
 `;

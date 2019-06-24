@@ -17,3 +17,34 @@ export function sendHomePageData(data) {
         writerData: data.writer
     }
 }
+
+function getMoreListData(data,page) {
+    return {
+        type: homeTypes.GET_MORE_LIST,
+        data,
+        page
+    }
+}
+
+export function getMoreList(page) {
+    return (dispatch) => {
+        axios.get('/api/homeListData.json?page=' + page).then((res) => {
+            dispatch(getMoreListData(res.data.data,page + 1));
+        }).catch((err) => console.log('getMoreList: ', err));
+    }
+}
+
+// 显示按钮:
+export const showBtn = function(){
+    return {
+        type:homeTypes.SHOW_BTN,
+        bool: true
+    }
+}
+// 隐藏按钮：
+export const disappearBtn = function () {
+    return {
+        type: homeTypes.DISAPPEAR_BTN,
+        bool: false
+    }
+}

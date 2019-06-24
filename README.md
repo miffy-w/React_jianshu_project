@@ -1,68 +1,33 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React 建PC端简书首页的前端项目
 
-## Available Scripts
+这个项目从2019年四月开始做的，经过一个多月才陆陆续续完成。因为是第一次写那么大的项目，而且对于react掌握程度有限，因此完成周期比较长。不过在实现途中收获了很多，比如在实现某些动画效果时，简单使用了 `CSStransition` ，写 UI 组件直接使用了 `styled-components` ，把 CSS 样式成为 React 的一个UI组件；代码优化时，使用 `PureComponent` 来代替使用 `componentShouldUpdata` 生命周期函数，最后还用到了 `react-router-dom` 提升页面体验，而且模拟了许多接口API，如：推荐信息、推荐用户、内容列表等。项目最重要的是使用**`React + Redux`** 来构建应用。redux 出色的状态管理使编写react变得简单并且容易管理。
 
-In the project directory, you can run:
+构建应用途中，大致使用了如下一些模块：
 
-### `npm start`
+| 模块名称                     | 描述                       |
+| ------------------------ | ------------------------ |
+| `react`                  | 基础模块                     |
+| `react-redux`            | 更好的管理react状态             |
+| `react-router-dom`       | react 前端路由               |
+| `redux-thunk`            | 更好的管理异步请求                |
+| `redux-immutable`        | 用于数据管理                   |
+| `styled-components`      | 一个适合 react 的 CSS in JS 库 |
+| `react-transition-group` | 在react应用中可以更加方便实现动画效果    |
+| `axios`                  | 用于异步请求的库                 |
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+初始构建项目时，直接使用了 `create-react-app` ，减少了配置的繁琐。
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+项目目录：![img\项目目录](img\项目目录.png)
 
-### `npm test`
+目录说明：
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## 项目搭建思路
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### `create-react-app jianshu_demo`
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+通过脚手架工具创建完基本骨架后，删除不需要的文件。比如初始的react页面内容以及测试文件。
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### `yarn start`
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+运行项目，查看页面效果。
