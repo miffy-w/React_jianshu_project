@@ -13,7 +13,8 @@ import {
     GoTop
 } from './style';
 
-class Home extends React.Component{
+// 使用 PureComponent 来优化性能，让render函数不做无用的重复渲染
+class Home extends React.PureComponent{
     render(){
         return(
             <HomeWrapper>
@@ -47,7 +48,6 @@ class Home extends React.Component{
     bindEvent(){
         const { showBtn,disappearBtn } = this.props;
         window.onscroll = function(){
-            console.log(document.documentElement.scrollTop);
             if (document.documentElement.scrollTop > 600) {
                 showBtn();
             } else {

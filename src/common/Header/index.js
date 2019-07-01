@@ -2,6 +2,7 @@ import React from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { connect } from 'react-redux';
 import { headerActions } from './store';
+import { Link } from 'react-router-dom';
 import {
     Head,
     Logo,
@@ -13,7 +14,8 @@ import {
     Tag
 } from './style';
 
-class Header extends React.Component{
+// 使用 PureComponent 可以优化性能，相当于自己写的 shouldComponentUpdata() 函数。 使render函数不被无用的渲染
+class Header extends React.PureComponent{
     render(){
         const {
             isFocus,
@@ -23,11 +25,15 @@ class Header extends React.Component{
         } = this.props;
         return(
             <Head>
-                <Logo></Logo>
+                <Link to="/">
+                    <Logo />
+                </Link>
                 <Nav className="left-btn-nav">
                     <Button className="left-btn home-btn">
-                        <i className="iconfont">&#xe682;</i>
-                        首页
+                        <Link className="shouye" to="/">
+                            <i className="iconfont">&#xe682;</i>
+                            首页
+                        </Link>
                     </Button>
                     <Button className="left-btn download">
                         <i className="iconfont">&#xe61a;</i>
@@ -59,8 +65,13 @@ class Header extends React.Component{
                     <Button className="right-btn beta">
                         简书钻
                     </Button>
-                    <Button className="right-btn sign-btn">登陆</Button>
-                    <Button className="right-btn radius-btn reg">注册</Button>
+                    {/* 这里用的路由还是 URL传参的形式，为了区分登陆和注册 */}
+                    <Link className="link" to="/log_in/sign_in">
+                        <Button className="right-btn sign-btn">登陆</Button>
+                    </Link>
+                    <Link className="link" to="/log_in/sign_up">
+                        <Button className="right-btn radius-btn reg">注册</Button>
+                    </Link>
                     <Button className="right-btn radius-btn writting">
                         <i className="iconfont">&#xe616;</i>
                         写文章

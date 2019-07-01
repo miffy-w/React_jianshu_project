@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const HomeWrapper = styled.div`
     width: 1000px;
     height: 400px;
-    margin: 30px auto;
+    margin: 84px auto;
 `;
 export const WrapperLeft = styled.div`
     width: 640px;
@@ -24,29 +24,30 @@ export const WrapperRight = styled.div`
 // List.js 部分：
 export const ListWrapper = styled.div`
     width: 625px;
-    position: relative;
 `;
 
 export const Item = styled.div`
-    height: 150px;
-    width: 625px;
+    width: 100%;
     border-bottom: 1px solid #f0f0f0;
-    padding: 15px 2px 0px 0;
+    padding: 15px 2px 20px 0;
     margin: 16px 0px;
     div.infoView{
         width: 100%;
-        position: absolute;
-        left: 0;
         *{
             width: 100%;
         }
-        h2 {
-            width: 458px;
-            font: 600 18px '微软雅黑';
-            margin-bottom: 8px;
-            cursor: pointer;
-            &:hover{
-                text-decoration: underline;
+        .title-link{
+            display: block;
+            text-decoration: none;
+            color: #000;
+            h2 {
+                width: 458px;
+                font: 600 18px '微软雅黑';
+                margin-bottom: 8px;
+                cursor: pointer;
+                &:hover{
+                    text-decoration: underline;
+                }
             }
             & + p{
                 width: 458px;
@@ -63,19 +64,6 @@ export const Item = styled.div`
         margin-top: 20px;
         border-radius: 6px;
     }
-`;
-
-export const LoadMore = styled.div`
-    width: 100%;
-    height: 40px;
-    background: gray;
-    line-height: 40px;
-    text-align: center;
-    color: #fff;
-    font-size: 20px;
-    border-radius: 10px;
-    margin: 20px 0;
-    cursor: pointer;
 `;
 
 export const Info = styled.p`
@@ -103,6 +91,19 @@ export const Info = styled.p`
             color: #f33;
         }
     }
+`;
+
+export const LoadMore = styled.div`
+    width: 80%;
+    height: 40px;
+    background: gray;
+    line-height: 40px;
+    text-align: center; 
+    color: #fff;
+    font-size: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    cursor: pointer;
 `;
 
 // recommend 部分：
@@ -239,7 +240,7 @@ export const User = styled.div`
             }
             span.bottom{
                 margin-top: 10px;
-                font-size: 13px;
+                font-size: 12px;
                 color: #999;
             }
         }

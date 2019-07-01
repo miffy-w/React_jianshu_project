@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import {
     ListWrapper,
@@ -8,14 +9,22 @@ import {
 } from '../style';
 import { homeActions } from '../store';
 
-class List extends React.Component{
+class List extends React.PureComponent{
     render(){
         return (
             <ListWrapper>
                 {this.props.listData.map((item,index) => (
                     <Item key={index}>
                         <div className="infoView">
-                            <h2>{item.title}</h2>
+                            <Link className="title-link" to={"/detail/" + item.index}>
+                                {/* 
+                                    注意这里的 Link的 to 属性，他把 item.index 传递了出去
+                                    这是路由，在 App.js 中的 ‘/ditail/:id’字段就会被检测到
+                                    来到 Detail 组件的 index.js 中，使用 this.props.match.params.id
+                                    就会获取到这里传入的 id 值。
+                                */}
+                                <h2>{item.title}</h2>
+                            </Link>
                             <p>{item.describe}</p>
                             <Info>
                                 <span>

@@ -2,16 +2,22 @@ import styled from 'styled-components';
 import logoPic from '../static/logo.png';
 
 export const Head = styled.header`
+    position: fixed;
+    top: 0%;
+    left: 0;
+    background: white;
     width: 100%;
     height: 56px;
     border-bottom: 1px solid #ddd;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    z-index: 1000;
+    .link{
+        text-decoration: none;
+    }
 `;
-export const Logo = styled.a.attrs({
-    href: '/'
-})`
+export const Logo = styled.div`
     display: block;
     height: 56px;
     width: 100px;
@@ -31,7 +37,7 @@ export const Nav = styled.nav`
     &.left-btn-nav{
         width: 960px;
         align-items: center;
-        margin-left: 160px;
+        margin-left: 100px;
         .left-btn{
             margin-left: 16px;
             text-align: center;
@@ -65,7 +71,10 @@ export const Button = styled.div`
     }
     &.home-btn{
         width: 90px;
-        color: #ea6f5a;
+        .shouye{
+            text-decoration: none;
+            color: #ea6f5a;
+        }
     }
     &.beta{
         width: 60px;
@@ -99,6 +108,7 @@ export const Button = styled.div`
         height: 38px;
         border-radius: 19px;
         background-color: #eee;
+        z-index: 1000;
         // 过渡动画：
         .slide-enter {
             transition: all .6s ease-out;
@@ -156,16 +166,21 @@ export const Button = styled.div`
             }
         }
     }
+    /* 注册 */
     &.reg{
         width: 80px;
         color: #ea6f5a;
     }
+    &.reg:hover{
+        background: rgba(236, 97, 73, .05);
+    }
+    /* 写文章 */
     &.writting{
         width: 100px;
         background-color: #ea6f5a;
         color: #ffffff;
     }
-
+    /* 热门标签（搜索框里） */
     &.hotTag{
         width: 210px;
     }
@@ -190,6 +205,7 @@ export const Input = styled.input.attrs({
     box-sizing: border-box;
     font-size: 16px;
     outline: none;
+    z-index: 1000;
     &::placeholder{
         color: #aaa;
     }
@@ -265,9 +281,7 @@ export const ChangeBtn = styled.span`
         color: #000;
     }
 `;
-export const Tag = styled.a.attrs({
-    href: '#'
-})`
+export const Tag = styled.div`
     display: block;
     text-decoration: none;
     color: #787878;

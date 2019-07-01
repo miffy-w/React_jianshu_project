@@ -6,7 +6,7 @@ import {
     User
 } from '../style';
 
-class Writer extends React.Component{
+class Writer extends React.PureComponent{
     constructor(){
         super()
         this.initNum = 0;
@@ -33,11 +33,11 @@ class Writer extends React.Component{
                                             <span className="top">{item.nickname}</span>
                                             <span className="bottom">写了
                                                 {
-                                                    item.total_wordage > 1000 ? (item.total_wordage / 1000).toFixed(1) : item.total_wordage
+                                                    item.total_wordage > 1000 ? (item.total_wordage / 1000).toFixed(1) + 'k' : item.total_wordage
                                                 }
                                                 字&nbsp;·&nbsp;
                                                 {
-                                                    item.total_likes_count > 1000 ? (item.total_wordage / 1000).toFixed(1) : item.total_wordage
+                                                    item.total_likes_count > 1000 ? (item.total_wordage / 1000).toFixed(1) + 'k' : item.total_wordage
                                                 }
                                                 人喜欢
                                             </span>

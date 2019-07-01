@@ -12,7 +12,7 @@ import {
 
 const bannerSrc = [banner_1,banner_2,banner_3,banner_4];
 
-class Recommend extends React.Component{
+class Recommend extends React.PureComponent{
     render(){
         return (
             <RecommendWrapper>
