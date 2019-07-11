@@ -173,9 +173,9 @@ export const Qrcode = styled.div`
         position: absolute;
         bottom: -10px;
         left: 50%;
-        transform: translateX(-50%);
         height: 20px;
         width: 20px;
+        transform: translateX(-50%);
         transform: rotate(45deg);
         border: 1px solid #999;
         background: #fff;
@@ -209,6 +209,12 @@ export const Exchange = styled.div`
     cursor: pointer;
     i.iconfont{
         font-size: 13px;
+        text-align: center;
+        padding: 0;
+        margin: 3px 3px 0px 0px;
+        float: left;
+        transition: all 0.8s;
+        transform-origin: center center;
     }
     &:hover{
         color: #333;

@@ -1,8 +1,10 @@
-import React from 'react';
+import React,{ Fragment } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { connect } from 'react-redux';
 import { headerActions } from './store';
 import { Link } from 'react-router-dom';
+// 拿到 signIn 组件里的 是否登录 props：
+import { loginActions } from '../../pages/LogIn/store';
 import {
     Head,
     Logo,
@@ -16,6 +18,12 @@ import {
 
 // 使用 PureComponent 可以优化性能，相当于自己写的 shouldComponentUpdata() 函数。 使render函数不被无用的渲染
 class Header extends React.PureComponent{
+    componentDidMount(){
+        const { isLogin, changeLogin } = this.props;
+        if(!isLogin && sessionStorage.getItem('userPass')){
+            changeLogin();
+        }
+    }
     render(){
         const {
             isFocus,
@@ -66,16 +74,43 @@ class Header extends React.PureComponent{
                         简书钻
                     </Button>
                     {/* 这里用的路由还是 URL传参的形式，为了区分登陆和注册 */}
-                    <Link className="link" to="/log_in/sign_in">
-                        <Button className="right-btn sign-btn">登陆</Button>
+                    {
+                        /* 这里看看浏览器存储里有没有内容，有的话刷新时直接页面不变化
+                            sessionStorage: 浏览的该窗口关闭后，数据清空
+                        */ 
+                        this.props.isLogin || sessionStorage.getItem('userPass') ? 
+                        <Link className="link" to="/">
+                            <Button
+                                onClick={this.props.signOut}
+                                className="right-btn sign-btn"
+                            >退出</Button>
+                        </Link> : 
+
+                        <Fragment>
+                            <Link className="link" to="/log_in/sign_in">
+                                <Button className="right-btn sign-btn">登录</Button>
+                            </Link>
+                            {/* 登录之前有“注册”这一项，登录之后，就应该没有了 */}
+                            <Link className="link" to="/log_in/sign_up">
+                                <Button
+                                    className="right-btn
+                                    radius-btn reg"
+                                >注册</Button>
+                            </Link>
+                        </Fragment>
+                    }
+                    
+                    {/* 这里，如果没有登录，就跳到登录页面，登陆过了才能跳到写文章页面 */}
+                    <Link className="link" to={
+                        this.props.isLogin || sessionStorage.getItem('userPass') ?
+                            '/write' : 
+                            '/log_in/sign_in'
+                        }>
+                        <Button className="right-btn radius-btn writting">
+                            <i className="iconfont">&#xe616;</i>
+                            写文章
+                        </Button>
                     </Link>
-                    <Link className="link" to="/log_in/sign_up">
-                        <Button className="right-btn radius-btn reg">注册</Button>
-                    </Link>
-                    <Button className="right-btn radius-btn writting">
-                        <i className="iconfont">&#xe616;</i>
-                        写文章
-                    </Button>
                 </Nav>
             </Head>
         );
@@ -140,7 +175,11 @@ const mapStateToProps = function(state){
         headerList: state.getIn(['header','list']),
         page: state.getIn(['header','page']),
         mouseIn: state.getIn(['header','mouseIn']),
-        totalPage: state.getIn(['header','totalPage'])
+        totalPage: state.getIn(['header','totalPage']),
+
+        // 从 login 组件中得知是否已经登录：
+        isLogin: state.getIn(['login','isLogin']),
+        info: state.getIn(['login','userInfo'])
     }
 }
 
@@ -165,17 +204,30 @@ const mapDispatchToprops = function (dispatch) {
         },
         handleSwitchTag(page, totalPage,spinIcon) {
             let originRotate = spinIcon.style.transform.replace(/[^0-9]/ig,'');
+            // 去除 数字之外的字符 获取到旋转的数值
             if (originRotate){
+                // 如果有数值，则转化成数字
                 originRotate = parseInt(originRotate,10);
             }else{
+                // 没有数值，赋值为 0
                 originRotate = 0;
             }
+            // 旋转
             spinIcon.style.transform = `rotate(${originRotate + 360}deg)`;
             if(page < totalPage){
                 dispatch(headerActions.switchTags(page + 1));
             }else{
                 dispatch(headerActions.switchTags(1));
             }       
+        },
+        // 退出操作：（这里应该传给 login 组件里的action 这样便于管理状态）
+        signOut(){
+            dispatch(loginActions.signOut());
+        },
+
+        // 刷新后，isLogin 的值自动变成了 “false”，现在应该再变回来：
+        changeLogin(){
+            dispatch(loginActions.changeLogin());
         }
     }
 }

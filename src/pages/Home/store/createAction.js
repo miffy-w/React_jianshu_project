@@ -48,3 +48,18 @@ export const disappearBtn = function () {
         bool: false
     }
 }
+
+// 改变推荐作者组件的页数：
+export const changePageList = function(nowPage,allPage){
+    var obj = {
+        type: homeTypes.CHANGE_PAGE_LIST,
+        page: 1
+    }
+    // 当前页数小于总页数，则获取下一页的数据
+    if(nowPage < allPage){
+        obj.page = nowPage + 1;
+    }else{      // 当前页数等于总页数，则再获取第一页的数据
+        obj.page = 1
+    }
+    return obj;
+}
